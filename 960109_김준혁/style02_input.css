@@ -1,0 +1,43 @@
+.aa{ background-color: black;
+	color:white; }
+
+#bb{ background-color: white;
+	color:black; }
+
+gr { color: #47C83E; }
+
+ye { color: #F2CB61; }
+
+#grad {
+    background: linear-gradient(90deg, #8041D9, #D9418C);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.text-rainbow {
+  background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+  color: transparent;
+  -webkit-background-clip: text;
+ }
+
+#grad2 {
+  background-image: linear-gradient(red, #47C83E);
+  color: transparent;
+  -webkit-background-clip: text;
+ }
+
+body {
+	color: white;
+	background-color: black;
+	font-family: 굴림;
+	font-size: 13pt;
+}
+
+h2 {
+	border-top: 3px double #8041D9;
+	border-bottom: 3px double #D9418C;
+	padding: 20px 0;
+	font-size: 25pt;
+	font-family: 고딕;
+}
+

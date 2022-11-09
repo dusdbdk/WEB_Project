@@ -1,0 +1,165 @@
+<!-- U202002265 김준혁 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 회원가입 </title>
+	<link type="text/css" rel="stylesheet" href="style02_input.css">
+<SCRIPT language="JavaScript">
+
+function checkInfo(){
+
+      if(MemberInfo.last_name.value.length < 1){
+        alert("성을 입력하세요");
+        MemberInfo.last_name.focus();
+        return false; }
+
+      if(MemberInfo.last_name.value.length > 40){
+        alert("성을 다시 입력하세요");
+        MemberInfo.last_name.focus();
+        return false; }
+
+      if(MemberInfo.first_name.value.length < 1) {
+        alert("이름을 입력하세요");
+        MemberInfo.first_name.focus();
+        return false; }
+
+      if(MemberInfo.first_name.value.length > 40) {
+        alert("이름을 입력하세요");
+        MemberInfo.first_name.focus();
+        return false; }
+
+      if(MemberInfo.mem_phone2.value.search(/^\d{4}$/) == -1){
+          alert("전화번호 앞자리는 4자리 숫자로 입력하세요");
+          MemberInfo.mem_phone2.focus();
+          return false; }
+
+      if(MemberInfo.mem_phone3.value.search(/^\d{4}$/) == -1){
+          alert("전화번호 뒷자리는 4자리 숫자로 입력하세요");
+          MemberInfo.mem_phone3.focus();
+          return false; }
+
+      if(MemberInfo.mem_id.value.length < 1){
+          alert("아이디를 입력하세요.");
+          MemberInfo.mem_id.focus();
+          return false; }
+
+      if((MemberInfo.mem_id.value.length > 12)||(MemberInfo.mem_id.value.length < 2)){
+          alert("아이디를 다시 입력하세요. 2~12글자");
+          MemberInfo.mem_id.focus();
+          return false; }
+
+      if(MemberInfo.PassWord.value.length < 1){
+          alert("패스워드를 입력하세요.");
+          MemberInfo.PassWord.focus();
+          return false; }
+
+      if((MemberInfo.PassWord.value.length > 20)||(MemberInfo.PassWord.value.length < 8)){
+          alert("패스워드를 다시 입력하세요. 8 ~ 20자");
+          MemberInfo.PassWord.focus();
+          return false; }
+
+      if(MemberInfo.Address.value.length < 1){
+          alert("주소를 입력하세요.");
+          MemberInfo.Address.focus();
+          return false; }
+
+      if(MemberInfo.E_Mail.value.length < 1){
+          alert("이메일 주소를 입력하세요.");
+          MemberInfo.E_Mail.focus();
+          return false; }
+
+      if(MemberInfo.intro.value.length < 1){
+          alert("자기소개를 입력하세요.");
+          MemberInfo.intro.focus();
+          return false; }
+
+      MemberInfo.submit(); }
+
+</SCRIPT>
+
+<style>
+
+ff { color: #F361A6; }
+mm { color: #00D8FF; }
+#red { color: #FF0000; }
+.blue { color: #1266FF; }
+
+</style>
+</head>
+<body>
+<form name="MemberInfo" action="Project_1_2_3.asp" method="post" onSubmit="return checkInfo()">
+
+<table border=1 align=center width=750>
+	<h2 id="grad" align=center> 회 원 가 입 </h2>
+<br>
+<tr>
+	<td align=center id="bb">성</td><td class="aa"><input type="text" name="last_name" size=10></td>
+</tr>
+<tr>
+	<td align=center id="bb">이름</td><td class="aa"><input type="text" size=15 name="first_name"></td>
+</tr>
+<tr>
+	<td align=center id="bb">생년월일</td><td class="aa"><input type="date" name="date"></td>
+</tr>
+<tr>
+	<td align=center id="bb">연락처</td><td class="aa"> <select>
+		<option selected>010</option>
+		<option>011</option>
+		<option>016</option>
+		<option>019</option>
+		</select>-
+	<input type="text" size=4 name="mem_phone2">-
+	<input type="text" size=4 name="mem_phone3"></td>
+</tr>
+<tr>
+	<td align=center id="bb" style="color:red"><strong>ID</strong></td><td class="aa"><input type="text" name="mem_id" size=15><button type="button" onclick= "alert('사용 가능한 아이디입니다.')">중복확인</button></td>
+</tr>
+
+	<td align=center id="bb" style="color:Red">PassWord</td></td><td class="aa"><input type="text" size=20 name="PassWord"></td>
+</tr>
+<tr>
+	<td width=100 align=center id="bb">프로필 사진</td><td class="aa"><input type="file" name="seller_id"></td>
+</tr>
+<tr>
+	<td align=center id="bb">성별</td><td class="aa"> 
+	<input type="radio" name="gender" value="male" checked><mm>남성</mm>
+	<input type="radio" name="gender" value="female"><ff>여성</ff>
+	<input type="radio" name="gender" value="private">비공개</td>
+</tr>
+
+<tr>
+	<td align=center id="bb">주소</td><td class="aa"><button type="button" onclick="alert('서버가 불안정합니다. 잠시 후 다시 시도해주세요.')">도로명 검색</button><input type="text" name="Address" size=50><br></td>
+</tr>
+<tr>
+	<td align=center id="bb">로그인 연동</td><td class="aa">
+	<input type="checkbox" name="naver" value="naver"><gr>네이버</gr>
+	<input type="checkbox" name="daum" value="daum">다음
+	<input type="checkbox" name="google" value="google">구글
+	<input type="checkbox" name="kakao" value="kakao"><ye>카카오</ye>
+	<input type="checkbox" name="not" value="not" checked>미선택</td>
+</tr>
+</tr>
+	<td align=center id="bb">이메일 주소</td></td><td class="aa"><input type="text" size=30 name="E_Mail">@<select>
+		<option selected>naver.com</option>
+		<option>gmail.com</option>
+		<option>daum.com</option>
+		<option>hanmail.com</option>
+		</select></td>
+</tr>
+<tr>
+	<td align=center id="bb">자기소개</td><td class="aa"><textarea name=intro rows="5" cols="73"></textarea></td>
+</tr>
+<tr>
+	<td align=center id="bb" style="color:#4374D9">로봇이<br>아닙니다.</td><td class="aa"><strong style="color:#FF4848">빨간색</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong style="color:#4374D9">파란색</strong><br><input type="range" name="range"><br>드래그하여 <strong style="color:#4374D9">파란색</strong>쪽 으로 이동하세요.</td>
+</tr>
+
+<tr><td align=center colspan=2><input type="submit" style="color:#D9418C" value="회원가입"> 
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="reset" style="color:#8041D9" value="다시 작성">
+</td>
+</tr>
+</td></tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!-- U202002265 김준혁 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 상품등록 (카테고리 - 게이밍 노트북)</title>
+	<link type="text/css" rel="stylesheet" href="style02_input.css">
+<SCRIPT language="JavaScript">
+function asdInfo() {
+
+    if(prodInfo.prod_name.value.length < 1) {
+        alert("상품명을 입력하세요.");
+        prodInfo.prod_name.focus();
+        return false; }
+
+    if((prodInfo.prod_name.value.length < 4)||(prodInfo.prod_name.value.length > 20)) {
+        alert("상품명은 4~20자 이내로 입력하세요.");
+        prodInfo.prod_name.focus();
+        return false; }
+
+    if(prodInfo.prod_code.value.search(/^\d{17}$/) == -1) {
+        alert("상품코드는 17자리 숫자로 입력하세요");
+        prodInfo.prod_code.focus();
+        return false; }
+
+    if(prodInfo.prod_price.value.length < 1) {
+        alert("상품가를 입력하세요");
+        prodInfo.prod_price.focus();
+        return false; }
+
+    if(prodInfo.prod_company.value.length < 1) {
+        alert("제조사를 입력하세요");
+        prodInfo.prod_company.focus();
+        return false; }
+
+    if(prodInfo.prod_many.value.length < 1) {
+        alert("수량을 입력하세요");
+        prodInfo.prod_many.focus();
+        return false; }
+
+    if(prodInfo.prod_info2.value.length < 30) {
+        alert("제품 설명을 최소 30자 이상 입력해주세요");
+        prodInfo.prod_info2.focus();
+        return false; }
+
+prodInfo.submit(); }
+
+</SCRIPT>
+
+<style>
+
+.blue { background-color: #4374D9; }
+
+.red { background-color: #FF4848;
+	color: white; }
+
+#green1 { background-color : #47C83E; }
+
+#green2 { background-color : green; }
+
+b1 { color: #4374D9; }
+
+r1 { color : #FF4848; }
+
+g1 { color: #47C83E; }
+
+g2 { color: green; }
+
+</style>
+</head>
+<body>
+<form name="prodInfo" action="Project_1_2_3.asp" method="post" onSubmit="return asdInfo()" >
+
+<table border=1 align=center width=650>
+	<h2 id="grad" align=center> 상 품 등 록 </h2>
+<br>
+<tr>
+	<td class="aa" width=100 align=center><strong>판매자 정보</strong></td><td><input type="file" name="seller_id"></td>
+</tr>
+<tr>
+	<td class="aa" align=center class="aa">상품명</td><td><input type="text" size=20 name="prod_name"></td>
+</tr>
+<tr>
+	<td class="aa" align=center>상품코드</td><td><input type="text" size=18 name="prod_code"></td>
+</tr>
+<tr>
+	<td class="aa" align=center style="color:red">판매가</td><td><input type="text" name="prod_price" min="1" max="9999999999">원<br></td>
+</tr>
+<tr>
+	<td  class="aa" align=center>이미지</td><td><input type="file" name="prod_img"></td>
+</tr>
+<tr>
+	<td  class="aa" align=center>제조사</td></td><td><input type="text" size=17 name="prod_company"></td>
+</tr>
+<tr>
+	<td  class="aa" align=center>배송방법</td><td><input type="checkbox" name="delivery" value="delivery" checked>택배배송
+	<input type="checkbox" name="free" value="free">무료배송</td>
+</tr>
+<tr>
+	<td class="aa" align=center>수량</td><td><input type="number" name="prod_many" min="0" max="99999"><br></td>
+</tr>
+<tr>
+	<td class="aa" align=center>동영상</td><td><input type="file" name="prod_vid"></td>
+</tr>
+<tr>
+	<td class="aa" align=center>옵션 설정</td><td> <select>
+		<option value="ROG Strix" selected>ROG Strix (최저가: 2,400,000원)</option>
+		<option value="ROG Scar">ROG Scar (최저가: 3,500,000원)</option>
+		<option value="ROG Zephyrus">ROG Zephyrus (최저가: 4,700,000원)</option>
+		</select></td>
+</tr>
+<tr>
+	<td span class="text-rainbow" align=center><strong>색상 </strong> (입력)</td><td><input type="color" name="color" size=15></td>
+
+</tr>
+<tr>
+	<td class="blue" align=center>프로세스</td><td>
+	<input type="radio" name="CPU" value="5800H">AMD Ryzen 4800H
+	<input type="radio" name="CPU" value="11900">intel i9-9800H
+	<input type="radio" name="CPU" value="5800H">AMD Ryzen 5800H<br>
+	<input type="radio" name="CPU" value="5900HX" checked><b1>AMD Ryzen 5900HX</b1>
+	<input type="radio" name="CPU" value="11900">intel i9-10900H
+	<input type="radio" name="CPU" value="11900">intel i9-11900H</td>
+</tr>
+<tr>
+	<td id="green1" align=center>그래픽카드</td><td>
+	<input type="radio" name="GPU" value="RTX3070">Nvidia RTX3050
+	<input type="radio" name="GPU" value="RTX3070">Nvidia RTX3050Ti
+	<input type="radio" name="GPU" value="RTX3070">Nvidia RTX3060<br>
+	<input type="radio" name="GPU" value="RTX3070" checked><g1>Nvidia RTX3070</g1>
+	<input type="radio" name="GPU" value="6800M">AMD Radeon RX 6800M
+	<input type="radio" name="GPU" value="RTX3080">Nvidia RTX3080</td>
+</tr>
+<tr>
+	<td id="green2" align=center>메모리</td><td>
+	<input type="radio" name="RAM" value="16GB">16GB
+	<input type="radio" name="RAM" value="32GB" checked><g2>32GB</g2>
+	<input type="radio" name="RAM" value="64GB">64GB</td>
+</tr>
+<tr>
+	<td class="red" align=center>스토리지</td><td>
+	<input type="radio" name="SSD" value="512GB">512GB
+	<input type="radio" name="SSD" value="1TB"checked><r1>1TB</r1>
+	<input type="radio" name="SSD" value="2TB">2TB</td>
+</tr>
+<tr>
+	<td class="aa" align=center>설명</td><td><textarea name=prod_info2 rows="5" cols="70">
+			     공통 옵션 사항
+*
+*
+*
+*
+*
+</textarea></td>
+</tr>
+<tr>
+	<td class="aa" align=center>등록일</td><td><input type="date" name="date"></td>
+</tr>
+<tr>
+	<td class="aa" align=center>만족도 조사</td><td class="text-rainbow">불만족&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp만족<br><input type="range" name="range"></td>
+</tr>
+<tr><td class="aa" align=center colspan=2><input type="submit" style="color:#D9418C" value="등록"> 
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="reset" style="color:#8041D9" value="다시 작성">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
